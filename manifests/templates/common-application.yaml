@@ -11,9 +11,9 @@ spec:
     namespace: common
   project: default
   source:
-    patH: /
+    patH: manifests
     repoURL: https://github.com/larkintuckerllc/common-app
-    targetRevision: 0.1.0
+    targetRevision: 0.1.1
   syncPolicy:
     automated:
       allowEmpty: true
