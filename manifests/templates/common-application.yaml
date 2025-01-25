@@ -15,7 +15,7 @@ spec:
   source:
     path: manifests
     repoURL: https://github.com/larkintuckerllc/common-app
-    targetRevision: 0.2.0
+    targetRevision: 0.2.1
   syncPolicy:
     automated:
       allowEmpty: true
