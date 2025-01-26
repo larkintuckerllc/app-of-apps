@@ -1,1 +1,2 @@
 {{- $_ := required "name is a required value" .Values.name -}}
+{{- $_ := required "environment is a required value" .Values.environment -}}
