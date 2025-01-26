@@ -15,7 +15,7 @@ spec:
   source:
     path: "manifests/overlays/{{ .Values.environment }}"
     repoURL: https://github.com/larkintuckerllc/environment-app
-    targetRevision: 0.1.0
+    targetRevision: 0.1.1
   syncPolicy:
     automated:
       allowEmpty: true
