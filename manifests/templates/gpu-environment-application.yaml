@@ -1,4 +1,4 @@
-{{ if and (.Values.gpu) (eq .Values.environment "testing") }}
+{{ if and .Values.gpu (eq .Values.environment "testing") (eq .Values.region "region-1") }}
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
