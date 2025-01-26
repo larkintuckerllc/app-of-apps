@@ -1,0 +1,29 @@
+{{ if and (.Values.gpu) (eq .Values.environment "testing") }}
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+  labels:
+    app: gpu-environment
+  name: {{ .Values.name }}-gpu-environment
+  namespace: argocd
+spec:
+  destination:
+    name: {{ .Values.name }}
+    namespace: gpu-environment
+  project: default
+  source:
+    helm:
+      valuesObject:
+        environment: {{ .Values.environment }}
+        gpu: {{ .Values.gpu }}
+    path: manifests
+    repoURL: https://github.com/larkintuckerllc/gpu-environment-app
+    targetRevision: 0.1.0
+  syncPolicy:
+    automated:
+      allowEmpty: true
+      prune: true
+      selfHeal: true
+{{ end }}
