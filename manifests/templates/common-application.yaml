@@ -15,7 +15,7 @@ spec:
   source:
     path: manifests
     repoURL: https://github.com/larkintuckerllc/common-app
-    targetRevision: {{ if eq .Values.name "c" }}0.3.0{{ else }}0.2.1{{ end }}
+    targetRevision: {{ if eq .Values.environment "testing" }}0.3.0{{ else }}0.2.1{{ end }}
   syncPolicy:
     automated:
       allowEmpty: true
