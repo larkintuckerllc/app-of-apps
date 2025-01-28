@@ -5,11 +5,11 @@ metadata:
     - resources-finalizer.argocd.argoproj.io
   labels:
     app: common
-  name: "{{ .Values.name }}-common"
+  name: {{ .Values.name }}-common
   namespace: argocd
 spec:
   destination:
-    name: "{{ .Values.name }}"
+    name: {{ .Values.name }}
     namespace: common
   project: default
   source:
@@ -21,4 +21,3 @@ spec:
       allowEmpty: true
       prune: true
       selfHeal: true
-  
