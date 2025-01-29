@@ -15,7 +15,7 @@ spec:
   source:
     path: manifests
     repoURL: https://github.com/larkintuckerllc/hook-app
-    targetRevision: 0.1.0
+    targetRevision: 0.2.0
   syncPolicy:
     automated:
       allowEmpty: true
