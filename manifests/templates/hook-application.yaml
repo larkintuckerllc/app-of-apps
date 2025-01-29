@@ -1,0 +1,23 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+  labels:
+    app: hook
+  name: {{ .Values.name }}-hook
+  namespace: argocd
+spec:
+  destination:
+    name: {{ .Values.name }}
+    namespace: hook
+  project: default
+  source:
+    path: manifests
+    repoURL: https://github.com/larkintuckerllc/hook-app
+    targetRevision: 0.1.0
+  syncPolicy:
+    automated:
+      allowEmpty: true
+      prune: true
+      selfHeal: true
