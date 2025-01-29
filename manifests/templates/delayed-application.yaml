@@ -1,25 +1,25 @@
-# apiVersion: argoproj.io/v1alpha1
-# kind: Application
-# metadata:
-#   annotations:
-#     argocd.argoproj.io/sync-wave: "5"
-#   finalizers:
-#     - resources-finalizer.argocd.argoproj.io
-#   labels:
-#     app: delayed
-#   name: {{ .Values.name }}-delayed
-#   namespace: argocd
-# spec:
-#   destination:
-#     name: {{ .Values.name }}
-#     namespace: delayed
-#   project: default
-#   source:
-#     path: manifests
-#     repoURL: https://github.com/larkintuckerllc/delayed-app
-#     targetRevision: 0.1.0
-#   syncPolicy:
-#     automated:
-#       allowEmpty: true
-#       prune: true
-#       selfHeal: true
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  annotations:
+    argocd.argoproj.io/sync-wave: "5"
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+  labels:
+    app: delayed
+  name: {{ .Values.name }}-delayed
+  namespace: argocd
+spec:
+  destination:
+    name: {{ .Values.name }}
+    namespace: delayed
+  project: default
+  source:
+    path: manifests
+    repoURL: https://github.com/larkintuckerllc/delayed-app
+    targetRevision: 0.1.0
+  syncPolicy:
+    automated:
+      allowEmpty: true
+      prune: true
+      selfHeal: true
